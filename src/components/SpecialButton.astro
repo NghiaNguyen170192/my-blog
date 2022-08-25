@@ -1,8 +1,10 @@
 ---
-    import '../styles/global.css';
-    const props = Astro.props;
-    const newClass = `btn btn--with-icon ${props.class && props.class}`;
-    const btnIconClass = `btn-icon fa ${props.invertarrow === "true" ? "fa-long-arrow-left" : "fa-long-arrow-right"}`;
+import "../styles/global.css";
+const props = Astro.props;
+const newClass = `btn btn--with-icon ${props.class && props.class}`;
+const btnIconClass = `btn-icon fa ${
+    props.invertarrow === "true" ? "fa-long-arrow-left" : "fa-long-arrow-right"
+}`;
 ---
 
 <a href={props.url} class={newClass}>

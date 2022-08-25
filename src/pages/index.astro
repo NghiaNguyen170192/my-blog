@@ -1,8 +1,8 @@
 ---
-import SocialPresence from '../components/SocialPresence.astro';
-import SpecialButton from '../components/SpecialButton.astro';
-import Layout from '../layouts/BaseLayout.astro';
-const title = "Gold Ayan blog";
+import SocialPresence from "../components/SocialPresence.astro";
+import SpecialButton from "../components/SpecialButton.astro";
+import Layout from "../layouts/BaseLayout.astro";
+const title = "Nguyễn Quốc Trọng Nghĩa blog";
 ---
 
 <Layout title={title}>
@@ -10,7 +10,7 @@ const title = "Gold Ayan blog";
 		<div class="container">
 			<div class="left">
 				<div class="profile-container">
-					<img src="/image/profile_image.png" alt="profile-image">
+					<img src="/image/portrait_small.jpg" alt="portrait_small" />
 					<div class="social-media-container">
 						<SocialPresence />
 					</div>
@@ -18,13 +18,11 @@ const title = "Gold Ayan blog";
 			</div>
 			<div class="right">
 				<h2 class="me-h1">
-					Hi I'm <b class="my-name">Gold Ayan</b>.
-					<br>
+					Hi I'm <b class="my-name">Nguyễn Quốc Trọng Nghĩa</b>.
+					<br />
 					Software Engineer
 				</h2>
-				<p class="tidbits">
-					I explore everything related to TECH
-				</p>
+				<p class="tidbits">I explore everything related to TECH</p>
 				<ul>
 					<li>Programming</li>
 					<li>Block Chain</li>
@@ -34,14 +32,21 @@ const title = "Gold Ayan blog";
 					<li>....</li>
 				</ul>
 				<div class="button-container">
-					<SpecialButton class="button-item" name="About Me" url="/about" />
-					<SpecialButton class="button-item" name="Blogs" url="/blog" />
+					<SpecialButton
+						class="button-item"
+						name="About Me"
+						url="/about"
+					/>
+					<SpecialButton
+						class="button-item"
+						name="Blogs"
+						url="/blog"
+					/>
 				</div>
 			</div>
 		</div>
 	</main>
 </Layout>
-
 
 <style>
 	.container {
@@ -50,7 +55,7 @@ const title = "Gold Ayan blog";
 		grid-template-columns: 1.2fr 1fr;
 		align-items: center;
 		gap: 50px;
-		grid-template-areas: "left right"
+		grid-template-areas: "left right";
 	}
 
 	.left {
@@ -71,7 +76,6 @@ const title = "Gold Ayan blog";
 		margin-top: 50px;
 		/*display: flex;*/
 	}
-
 
 	.profile-container {
 		display: flex;
@@ -112,7 +116,6 @@ const title = "Gold Ayan blog";
 
 	/* Change the button to column orientation when screen shrinks */
 	@media only screen and (max-width: 950px) {
-
 		.button-container {
 			flex-direction: column;
 			align-items: center;
@@ -125,9 +128,8 @@ const title = "Gold Ayan blog";
 	}
 
 	@media only screen and (max-width: 600px) {
-
 		.container {
-			grid-template-areas: "left""right";
+			grid-template-areas: "left" "right";
 			grid-template-columns: 1fr;
 			gap: 0;
 		}

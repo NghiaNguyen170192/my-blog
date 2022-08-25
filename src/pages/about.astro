@@ -1,25 +1,23 @@
 ---
-    import SocialPresence from '../components/SocialPresence.astro';
-    import Layout from '../layouts/BaseLayout.astro';
-    const title = "Welcome to About section";
+import SocialPresence from "../components/SocialPresence.astro";
+import Layout from "../layouts/BaseLayout.astro";
+const title = "Welcome to About section";
 ---
 
 <Layout title={title}>
     <div class="container">
-        <div class="header">
-            Wow, you just like to know more about me, Alright go ahead.
-        </div>
+        <div class="header">About me</div>
         <div class="profile-image">
-            <img src="/image/profile_image.png" alt="profile-image">
+            <img src="/image/portrait_small.jpg" alt="portrait_small" />
         </div>
         <div class="blog-purpose">
-            This is <strong>Thanga Ayyanar</strong>, also known as <strong>Gold Ayan</strong>.
-            I waste most of my time in
+            My name is <strong>Nguyễn Quốc Trọng Nghĩa</strong>. I waste most of
+            my time in
             <em>Automate things using python</em>,
             <em>learning Terminal tools</em>,
             <em>exploring linux</em>,
-            <em>imporving problem solving skills</em>.
-            one of the few soul who loves both emacs and vim :p.
+            <em>imporving problem solving skills</em>. one of the few soul who
+            loves both emacs and vim :p.
             <div class="social-media-container">
                 <SocialPresence />
             </div>
@@ -56,10 +54,11 @@
                 <ul>
                     <li>Static Site Blog powered by Astro</li>
                     <p>
-                        I have done similar project in 2019, it uses <strong>zola</strong> as static
-                        site generator but used Zulma blog template (Template built
-                        using Bulma). This time i want to write everything from scratch
-                        without any CSS Framework or Blog template.
+                        I have done similar project in 2019, it uses <strong
+                            >zola</strong
+                        > as static site generator but used Zulma blog template (Template
+                        built using Bulma). This time i want to write everything
+                        from scratch without any CSS Framework or Blog template.
                     </p>
                     <ul>
                         <li>HTML, CSS, JS</li>
@@ -88,7 +87,7 @@
     }
 
     .header {
-        grid-column: 1/span 3;
+        grid-column: 1 / span 3;
         text-align: center;
         padding: 15px;
         font-size: 32px;
@@ -97,14 +96,14 @@
     }
 
     .tech-skills {
-        grid-column: 1/span 3;
+        grid-column: 1 / span 3;
 
         display: grid;
         grid-template-columns: repeat(3, 1fr);
     }
 
     .projects {
-        grid-column: 1/span 3;
+        grid-column: 1 / span 3;
     }
 
     img {
@@ -118,7 +117,7 @@
     }
 
     .blog-purpose {
-        grid-column: 2/span 2;
+        grid-column: 2 / span 2;
         padding-left: 15px;
         align-self: center;
         font-size: 1.5rem;
@@ -132,7 +131,6 @@
     }
 
     @media only screen and (max-width: 900px) {
-
         .container {
             margin: 80px;
             grid-template-columns: 1fr;
@@ -153,18 +151,15 @@
             grid-row: 3;
             grid-column: 1;
         }
-
     }
 
     @media only screen and (max-width: 800px) {
-
         .tech-skills {
             grid-template-columns: 1fr;
         }
     }
 
     @media only screen and (max-width: 600px) {
-
         .container {
             margin: 10px;
         }

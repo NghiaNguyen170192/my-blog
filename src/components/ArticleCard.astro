@@ -1,5 +1,5 @@
 ---
-    const { post } = Astro.props;
+const { post } = Astro.props;
 ---
 
 <div class="card">
@@ -20,7 +20,7 @@
         flex-direction: column;
 
         max-width: 960px;
-        min-height: 3.750em;
+        min-height: 3.75em;
         line-height: 1.5em;
     }
 
@@ -38,7 +38,7 @@
     }
 
     .header:hover {
-        color: var(--theme-color-four)
+        color: var(--theme-color-four);
     }
 
     .content {
@@ -46,7 +46,6 @@
         opacity: 65%;
         font-size: large;
     }
-
 
     @media only screen and (max-width: 600px) {
         card {

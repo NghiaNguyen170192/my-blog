@@ -26,11 +26,8 @@ const { page } = Astro.props;
 ---
 
 <BaseLayout title={"Blog Article List"}>
-    <main>
-        <h1>{title}</h1>
-        <div class="cardlist">
-            {page.data.map((post) => <ArticleCard post={post} />)}
-        </div>
-        <Paginator page={page} />
-    </main>
+    <div class="cardlist">
+        {page.data.map((post) => <ArticleCard post={post} />)}
+    </div>
+    <Paginator page={page} />
 </BaseLayout>

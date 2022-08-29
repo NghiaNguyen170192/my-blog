@@ -5,23 +5,28 @@
 	font-family: "Source Sans Pro", sans-serif;
 
 	/* theme platte */
-	--theme-color-one: #cb0033; /* Vivid Crimson */
-	--theme-color-two: #db143c; /* Crimson */
-	--theme-color-three: #ed465a; /* Desire */
-	--theme-color-four: #edb970; /* Middle yello red */
-	--theme-color-five: #e4a241; /* Meat brown */
+	--theme-color-one: #cb0033;
+	/* Vivid Crimson */
+	--theme-color-two: #db143c;
+	/* Crimson */
+	--theme-color-three: #ed465a;
+	/* Desire */
+	--theme-color-four: #edb970;
+	/* Middle yello red */
+	--theme-color-five: #e4a241;
+	/* Meat brown */
 }
 
 main {
 	margin-left: 8rem;
 	padding: 1rem;
-	width: 80%;
 }
 
 h1 {
 	color: var(--theme-color-three);
 }
 
+/* 
 @media only screen and (max-width: 600px) {
 	main {
 		margin: 0px;
@@ -32,7 +37,7 @@ h1 {
 	body {
 		padding-bottom: 2.5rem;
 	}
-}
+} */
 
 /* Markdown Affecting Css */
 article ul li {
@@ -69,7 +74,7 @@ article blockquote {
 }
 
 article img {
-	width: 100%;
+	/* width: 100%; */
 	border: 1px solid var(--theme-color-four);
 	border-radius: 15px;
 }
@@ -87,4 +92,11 @@ article em {
 article a {
 	color: var(--theme-color-three);
 	/* text-decoration: none; */
+}
+
+article table,
+th,
+td {
+	border: 1px solid var(--theme-color-five);
+	border-collapse: collapse;
 }

@@ -1,8 +1,4 @@
-# Welcome to [Astro](https://astro.build)
-
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/starter)
-
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+# Static portfolio web built by [Astro](https://astro.build)
 
 ## 🚀 Project Structure
 
@@ -10,24 +6,22 @@ Inside of your Astro project, you'll see the following folders and files:
 
 ```
 /
-├── public/
-│   └── favicon.ico
-├── src/
-│   ├── components/
-│   │   └── *.astro
-│   ├── layouts/
-│   │   └── BaseLayout.astro
-│   │   └── BlogPostLayout.astro
-│   └── pages/
-│       └── *.mdx
-└── package.json
-└── tsconfig.json
-└── astro.config.mjs
+├─ public/
+│   └─ favicon.ico
+├─ src/
+│   ├─ components/
+│   │       └─ *.astro
+│   ├─ layouts/
+│   │       └─ BaseLayout.astro
+│   │       └─ BlogPostLayout.astro
+│   └─ pages/
+│           └─ *.mdx
+├─ package.json
+├─ tsconfig.json
+└─ astro.config.mjs
 ```
 
 Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
-
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components or layouts.
 
 Any static assets, like images, can be placed in the `public/` directory.
 
@@ -41,15 +35,3 @@ All commands are run from the root of the project, from a terminal:
 | `npm run dev`     | Starts local dev server at `localhost:3000`  |
 | `npm run build`   | Build your production site to `./dist/`      |
 | `npm run preview` | Preview your build locally, before deploying |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://github.com/withastro/astro) or jump into our [Discord server](https://astro.build/chat).
-
-## TODO
-
-- [x] CTF category is not showing in category list.
-- [x] Confirm the changes in about me page.
-- [x] Work on RSS Feed.
-- [x] Work on tags and category page.
-- [ ] Date and Category formatting in blog article

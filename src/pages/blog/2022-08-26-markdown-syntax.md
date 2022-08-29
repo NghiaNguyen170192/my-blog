@@ -2,9 +2,11 @@
 layout: ../../layouts/BlogPostLayout.astro
 title: "Markdown syntax cheatsheet"
 description: "Markdown syntax cheatsheet"
-author: "Matthew Phillips"
-date: "09 Aug 2022"
-tags: ["markdown", "mdx", "astro"]
+author: "Nghia Nguyen"
+date: "29 Aug 2022"
+pubDate: "29 Aug 2022"
+tags: ["markdown", "mdx", "astro", "cheatsheet"]
+categories: ["cheatsheet"]
 ---
 
 

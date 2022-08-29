@@ -4,6 +4,9 @@ title: "About me"
 description: "About me"
 author: "Nghia Nguyen"
 date: "29 Aug 2022"
+pubDate: "29 Aug 2022"
+tags: ["about-me"]
+categories: ["nqtn"]
 ---
 
 # About me

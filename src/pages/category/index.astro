@@ -1,30 +1,31 @@
 ---
 // Component imports and setup JavaScript go here!
-import BaseLayout from '../../layouts/BaseLayout.astro'
-import { generateCategoryData } from '../../utils/slugHelper.js'
-const allPosts = await Astro.glob('../blog/**/*.md');
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { generateCategoryData } from "../../utils/slugHelper.js";
+const allPosts = await Astro.glob("../blog/**/*.md");
 const allCategoriesUnique = new Set();
-allPosts.filter((post) => (post.frontmatter.draft == undefined)).forEach(post => {
+allPosts.forEach((post) => {
     const category = post.frontmatter.category;
     if (category) {
-        allCategoriesUnique.add(category)
+        allCategoriesUnique.add(category);
     }
-})
+});
 // console.log(allCategoriesUnique);
 const allCategoriesData = generateCategoryData(allCategoriesUnique);
 // console.log(allCategoriesData);
-const title = "Blog Categories"
+const title = "Blog Categories";
 ---
 
 <BaseLayout title={title}>
-    <main>
-        <h1>{title}</h1>
-        <ul>
-            {allCategoriesData.map(category => (
-            <li><a href={`/category/${category.slug}`}>{category.name}</a></li>
-            ))}
-        </ul>
-    </main>
+    <ul>
+        {
+            allCategoriesData.map((category) => (
+                <li>
+                    <a href={`/category/${category.slug}`}>{category.name}</a>
+                </li>
+            ))
+        }
+    </ul>
 </BaseLayout>
 
 <style>

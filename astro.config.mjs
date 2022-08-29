@@ -5,7 +5,7 @@ import netlify from '@astrojs/netlify/functions';
 // https://astro.build/config
 export default defineConfig({
 	site: "http://localhost:3000",
-	output: "server",
+	output: "static",
 	integrations: [mdx()],
 	markdown: {
 		shikiConfig: {

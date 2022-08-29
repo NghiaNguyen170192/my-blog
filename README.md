@@ -14,10 +14,15 @@ Inside of your Astro project, you'll see the following folders and files:
 │   └── favicon.ico
 ├── src/
 │   ├── components/
-│   │   └── Layout.astro
+│   │   └── *.astro
+│   ├── layouts/
+│   │   └── BaseLayout.astro
+│   │   └── BlogPostLayout.astro
 │   └── pages/
-│       └── index.astro
+│       └── *.mdx
 └── package.json
+└── tsconfig.json
+└── astro.config.mjs
 ```
 
 Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.

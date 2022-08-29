@@ -1,10 +1,26 @@
 ---
 const { post } = Astro.props;
+console.log(post);
+const tags_link = post.frontmatter.tags.map((tag) => {
+    var json = {};
+    json["tag"] = tag;
+    json["url"] = `/tags/${tag}`;
+    return json;
+});
 ---
 
 <div class="card">
     <div class="card-top">
         <a class="header" href={post.url}>{post.frontmatter.title}</a>
+        <div class="tag">
+            {
+                tags_link.map((tag) => (
+                    <a class="tag tag-item" href={tag["url"]}>
+                        {tag["tag"]}
+                    </a>
+                ))
+            }
+        </div>
     </div>
     <p class="content">{post.frontmatter.description}</p>
 </div>
@@ -27,6 +43,8 @@ const { post } = Astro.props;
     .card-top {
         padding: 10px;
         border-bottom: 2px solid var(--theme-color-five);
+        display: flex;
+        justify-content: space-between;
     }
 
     .header {
@@ -51,5 +69,9 @@ const { post } = Astro.props;
         card {
             width: 100%;
         }
+    }
+    .tag {
+        flex: auto;
+        text-align: right;
     }
 </style>

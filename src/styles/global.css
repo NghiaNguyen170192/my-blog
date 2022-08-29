@@ -100,3 +100,25 @@ td {
 	border: 1px solid var(--theme-color-five);
 	border-collapse: collapse;
 }
+
+.tag,
+.metadata-flexbox {
+	margin: 0 10px;
+}
+
+.tag-item {
+	background: var(--theme-color-five);
+	color: white;
+	padding: 3px 10px;
+	border-radius: 10px;
+	text-decoration: none;
+}
+
+.tag-item:not(:last-child) {
+	margin-right: 12px;
+}
+
+.category-item {
+	font-weight: bold;
+	text-decoration: none;
+}

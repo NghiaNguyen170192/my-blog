@@ -5,11 +5,11 @@ description: "Contact"
 author: "Nghia Nguyen"
 date: "29 Aug 2022"
 pubDate: "29 Aug 2022"
-tags: ["contact"]
-categories: ["nqtn"]
+# tags: ["contact"]
+# categories: ["nqtn"]
 ---
 
-### Contact
+# Contact
 + Mail: [Nguyen Quoc Trong Nghia](mailto:nghia.nguyen170192@gmail.com)
 + Skype: nghia.nguyen170192
 + Phone: (+84) 908 170 192

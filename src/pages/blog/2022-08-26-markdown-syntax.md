@@ -5,7 +5,7 @@ description: "Markdown syntax cheatsheet"
 author: "Nghia Nguyen"
 date: "29 Aug 2022"
 pubDate: "29 Aug 2022"
-tags: ["markdown", "mdx", "astro", "cheatsheet"]
+tags: ["markdown", "md", "cheatsheet"]
 categories: ["cheatsheet"]
 ---
 

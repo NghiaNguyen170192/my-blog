@@ -5,7 +5,7 @@ import BlogArticleCard from "../../components/ArticleCard.astro";
 import { generateCategoryData } from "../../utils/slugHelper.js";
 
 export async function getStaticPaths() {
-    const allPosts = await Astro.glob('../../pages/**/*.md');
+    const allPosts = await Astro.glob("../../pages/blog/*.md");
     const sortedPosts = allPosts.sort(
         (a, b) =>
             new Date(b.frontmatter.date).valueOf() -
@@ -39,13 +39,12 @@ export async function getStaticPaths() {
 }
 const { category, posts } = Astro.props;
 const title = `Blog Posts Tagged with ${category}`;
-console.log(title);
 ---
 
 <BaseLayout title={title}>
     <main>
         <h1>{title}</h1>
-
+        
         {posts.map((post) => <BlogArticleCard post={post} />)}
     </main>
 </BaseLayout>

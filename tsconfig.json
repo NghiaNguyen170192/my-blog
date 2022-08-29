@@ -27,9 +27,7 @@
   },
   "exclude": [
     "node_modules",
-    "**/*.spec.ts",
-    "**/category/*",
-    "**/tags/*"
+    "**/*.spec.ts"
   ],
   "include": [
     "src/**/*"

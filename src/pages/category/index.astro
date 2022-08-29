@@ -2,7 +2,8 @@
 // Component imports and setup JavaScript go here!
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import { generateCategoryData } from "../../utils/slugHelper.js";
-const allPosts = await Astro.glob("../blog/**/*.md");
+
+const allPosts = await Astro.glob("../../pages/blog/*.md");
 const allCategoriesUnique = new Set();
 allPosts.forEach((post) => {
     const category = post.frontmatter.category;
@@ -17,6 +18,7 @@ const title = "Blog Categories";
 ---
 
 <BaseLayout title={title}>
+    <h1>{title}</h1>
     <ul>
         {
             allCategoriesData.map((category) => (

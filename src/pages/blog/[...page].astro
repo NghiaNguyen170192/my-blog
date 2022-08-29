@@ -25,7 +25,8 @@ const title = "Blog Article List";
 const { page } = Astro.props;
 ---
 
-<BaseLayout title={"Blog Article List"}>
+<BaseLayout title={title}>
+    <h1>{title}</h1>
     <div class="cardlist">
         {page.data.map((post) => <ArticleCard post={post} />)}
     </div>

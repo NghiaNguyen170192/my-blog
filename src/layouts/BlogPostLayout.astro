@@ -5,13 +5,13 @@ import SideBar from "../components/SideBar.astro";
 const { content } = Astro.props;
 const formatted_date = new Date(content.date).toDateString();
 console.log(content);
-// const tags_link = content.tags.map((tag) => {
-//   var json = {};
-//   json["tag"] = tag;
-//   json["url"] = `/tags/${tag}`;
-//   return json;
-// });
-// console.log(tags_link);
+const tags_link = content.tags.map((tag) => {
+  var json = {};
+  json["tag"] = tag;
+  json["url"] = `/tags/${tag}`;
+  return json;
+});
+console.log(tags_link);
 ---
 
 <!DOCTYPE html>
@@ -30,13 +30,13 @@ console.log(content);
         </div>
         <br />
         <div class="tag">
-          <!-- {
+          {
             tags_link.map((tag) => (
               <a class="tag-item" href={tag["url"]}>
                 {tag["tag"]}
               </a>
             ))
-          } -->
+          }
         </div>
         <br />
         <slot />

@@ -1,11 +1,8 @@
 ---
-export interface Props {
-  title: string;
-}
-
 import BaseHead from "../components/BaseHead.astro";
 import SideBar from "../components/SideBar.astro";
-const { title } = Astro.props as Props;
+
+const { title } = Astro.props || Astro.props.content.title;
 ---
 
 <!DOCTYPE html>
@@ -18,8 +15,6 @@ const { title } = Astro.props as Props;
     <SideBar />
     <main>
       <article>
-        <h1>{title}</h1>
-        <br />
         <slot />
       </article>
     </main>

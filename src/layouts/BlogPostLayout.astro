@@ -4,14 +4,12 @@ import SideBar from "../components/SideBar.astro";
 
 const { content } = Astro.props;
 const formatted_date = new Date(content.date).toDateString();
-console.log(content);
 const tags_link = content.tags.map((tag) => {
   var json = {};
   json["tag"] = tag;
   json["url"] = `/tags/${tag}`;
   return json;
 });
-console.log(tags_link);
 ---
 
 <!DOCTYPE html>

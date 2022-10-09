@@ -6,9 +6,9 @@ import { generateCategoryData } from "../../utils/slugHelper.js";
 const allPosts = await Astro.glob("../../pages/blog/*.md");
 const allCategoriesUnique = new Set();
 allPosts.forEach((post) => {
-    const category = post.frontmatter.category;
-    if (category) {
-        allCategoriesUnique.add(category);
+    const categories = post.frontmatter.categories;
+    if (categories) {
+        allCategoriesUnique.add(categories);
     }
 });
 // console.log(allCategoriesUnique);

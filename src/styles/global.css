@@ -26,7 +26,7 @@ h1 {
 	color: var(--theme-color-three);
 }
 
-/* 
+
 @media only screen and (max-width: 600px) {
 	main {
 		margin: 0px;
@@ -37,7 +37,7 @@ h1 {
 	body {
 		padding-bottom: 2.5rem;
 	}
-} */
+}
 
 /* Markdown Affecting Css */
 article ul li {

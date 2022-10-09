@@ -16,29 +16,29 @@ export async function getStaticPaths() {
     const allCategoriesUnique = new Set();
     sortedPosts.forEach((post) => {
         post.frontmatter.tags &&
-            post.frontmatter.tags.map((category) => {
-                allCategoriesUnique.add(category);
+            post.frontmatter.tags.map((tags) => {
+                allCategoriesUnique.add(tags);
             });
     });
     const allCategoriesData = generateCategoryData(allCategoriesUnique);
 
     // map through the tags array
-    return allCategoriesData.map((category) => {
+    return allCategoriesData.map((tags) => {
         // filter the posts that match the given category
         const posts = sortedPosts.filter((post) =>
-            post.frontmatter.tags.includes(category.name)
+            post.frontmatter.tags.includes(tags.name)
         );
         return {
-            params: { slug: category.slug },
+            params: { slug: tags.slug },
             props: {
-                category: category.name,
+                tags: tags.name,
                 posts: posts,
             },
         };
     });
 }
-const { category, posts } = Astro.props;
-const title = `Blog Posts Tagged with ${category}`;
+const { tags, posts } = Astro.props;
+const title = `Blog Posts Tagged with [${tags}]`;
 ---
 
 <BaseLayout title={title}>

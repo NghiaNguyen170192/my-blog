@@ -15,9 +15,9 @@ export async function getStaticPaths() {
     // Get all unique tags
     const allCategoriesUnique = new Set();
     sortedPosts.forEach((post) => {
-        const category = post.frontmatter.category;
-        if (category) {
-            allCategoriesUnique.add(category);
+        const categories = post.frontmatter.categories;
+        if (categories) {
+            allCategoriesUnique.add(categories);
         }
     });
     const allCategoriesData = generateCategoryData(allCategoriesUnique);
@@ -26,7 +26,7 @@ export async function getStaticPaths() {
     return allCategoriesData.map((category) => {
         // filter the posts that match the given category
         const posts = sortedPosts.filter(
-            (post) => post.frontmatter.category == category.name
+            (post) => post.frontmatter.categories == category.name
         );
         return {
             params: { slug: category.slug },
@@ -38,7 +38,7 @@ export async function getStaticPaths() {
     });
 }
 const { category, posts } = Astro.props;
-const title = `Blog Posts Tagged with ${category}`;
+const title = `Blog Posts Tagged with [${category}]`;
 ---
 
 <BaseLayout title={title}>

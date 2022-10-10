@@ -49,6 +49,6 @@ Here are steps to deploy to Azure.
 8. Link your *Organization* , *Repository* and *Branch*
 9. Then click *Create*
 
-![Deploy to Azure image](/public/image/deploy-to-azure.png)
+![Deploy to Azure image](/image/deploy-to-azure.png)
 
 It will create a deployment *.yml* file under *.github/workflows*

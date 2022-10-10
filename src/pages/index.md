@@ -9,7 +9,6 @@ pubDate: "29 Aug 2022"
 # categories: ["nqtn"]
 ---
 
-
 # Hello 
 My name is **Nguyen Quoc Trong Nghia**
 

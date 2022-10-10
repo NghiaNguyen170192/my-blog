@@ -9,7 +9,7 @@ pubDate: "29 Aug 2022"
 # categories: ["nqtn"]
 ---
 # About me
-
+![portrait small](../../../public/image/portrait_small.jpg)
 ### Experience
 
 7 years experiences with .NET Technologies along with 4 years experiences with Microsoft Dynamics CRM on-premise(2011, 2016) and online (Dynamics 365)

@@ -38,4 +38,4 @@ All commands are run from the root of the project, from a terminal:
 
 
 ## Production
-Please visit [NQTN Blog](https://nqtn.online) for demo
+Please visit [NQTN Blog](https://www.nqtn.online) for demo

@@ -1,7 +1,7 @@
 ---
 layout: ../../layouts/BlogPostLayout.astro
-title: "Deploy Astro to Production"
-description: "Deploy Astro to Production"
+title: "Astro Production Deployment"
+description: "How to deploy Astro to Production"
 author: "Nghia Nguyen"
 date: "09 Oct 2022"
 pubDate: "09 Oct 2022"
@@ -52,3 +52,5 @@ Here are steps to deploy to Azure.
 ![Deploy to Azure image](/image/deploy-to-azure.png)
 
 It will create a deployment *.yml* file under *.github/workflows*
+
+Then navigate to *Actions* in  your  *GitHub repo*. Once the workflow runs successfully, you can check your blog is published publicly to the Internet.  

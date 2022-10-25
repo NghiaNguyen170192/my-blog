@@ -1,0 +1,26 @@
+version: "3.9"
+
+services:
+  web1:
+    restart: on-failure
+    build: 
+      context: .
+      dockerfile: ./Dockerfile
+    hostname: web1
+    ports:
+      - '81:3000'
+  web2:
+    restart: on-failure
+    build: 
+      context: .
+      dockerfile: ./Dockerfile
+    hostname: web2
+    ports:
+      - '82:3000'
+  nginx:
+    build: ./nginx
+    ports:
+    - '1234:1234'
+    depends_on:
+    - web1
+    - web2

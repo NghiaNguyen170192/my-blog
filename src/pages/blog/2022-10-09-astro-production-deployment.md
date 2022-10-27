@@ -3,8 +3,8 @@ layout: ../../layouts/BlogPostLayout.astro
 title: "Astro Production Deployment"
 description: "How to deploy Astro to Production"
 author: "Nghia Nguyen"
-date: "09 Oct 2022"
-pubDate: "09 Oct 2022"
+date: "09th Oct 2022"
+pubDate: "09th Oct 2022"
 tags: ["azure", "astro", "pwa", "deployment", "netlify"]
 categories: ["deployment"]
 ---

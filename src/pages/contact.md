@@ -3,8 +3,8 @@ layout: ../layouts/BaseLayout.astro
 title: "Contact"
 description: "Contact"
 author: "Nghia Nguyen"
-date: "29 Aug 2022"
-pubDate: "29 Aug 2022"
+date: "29th Aug 2022"
+pubDate: "29th Aug 2022"
 # tags: ["contact"]
 # categories: ["nqtn"]
 ---

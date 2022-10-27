@@ -1,77 +1,27 @@
 ---
+import Badge from "./Badge.astro";
 const { post } = Astro.props;
-console.log(post);
 const tags_link = post.frontmatter.tags.map((tag) => {
-    var json = {};
-    json["tag"] = tag;
-    json["url"] = `/tags/${tag}`;
-    return json;
+	var json = {};
+	json["tag"] = tag;
+	json["url"] = `/tags/${tag}`;
+	return json;
 });
 ---
 
-<div class="card">
-    <div class="card-top">
-        <a class="header" href={post.url}>{post.frontmatter.title}</a>
-        <div class="tag">
-            {
-                tags_link.map((tag) => (
-                    <a class="tag tag-item" href={tag["url"]}>
-                        {tag["tag"]}
-                    </a>
-                ))
-            }
-        </div>
-    </div>
-    <p class="content">{post.frontmatter.description}</p>
+<div class="card border-dark mb-3">
+	<div class="card-header form-inline">
+		<h5 class="card-title inline">
+			<a href={post.url}>{post.frontmatter.title}</a>
+		</h5>
+		<h6 class="card-title inline">
+			{post.frontmatter.pubDate}
+		</h6>
+	</div>
+	<div class="card-body text-dark">
+		<p class="card-text">{post.frontmatter.description}</p>
+	</div>
+	<div class="card-footer bg-transparent border-dark">
+		{tags_link.map((tag) => <Badge url={tag["url"]} name={tag["tag"]} />)}
+	</div>
 </div>
-
-<style>
-    .card {
-        width: 80%;
-        margin: 2em auto;
-        border-radius: 0.313em;
-        box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.5);
-        color: #292929;
-        display: flex;
-        flex-direction: column;
-
-        max-width: 960px;
-        min-height: 3.75em;
-        line-height: 1.5em;
-    }
-
-    .card-top {
-        padding: 10px;
-        border-bottom: 2px solid var(--theme-color-five);
-        display: flex;
-        justify-content: space-between;
-    }
-
-    .header {
-        color: var(--theme-color-one);
-        font-size: x-large;
-        font-weight: bold;
-        text-decoration: none;
-        padding-left: 10px;
-    }
-
-    .header:hover {
-        color: var(--theme-color-four);
-    }
-
-    .content {
-        padding-left: 25px;
-        opacity: 65%;
-        font-size: large;
-    }
-
-    @media only screen and (max-width: 600px) {
-        card {
-            width: 100%;
-        }
-    }
-    .tag {
-        flex: auto;
-        text-align: right;
-    }
-</style>

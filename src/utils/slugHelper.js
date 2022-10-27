@@ -18,5 +18,6 @@ export function generateCategoryData(categories) {
 			slug: `${generateSlug(category)}`,
 		});
 	});
-	return categoryData;
+
+	return categoryData.sort((a, b) => (a.name > b.name) ? 1 : ((b.name > a.name) ? -1 : 0));
 }

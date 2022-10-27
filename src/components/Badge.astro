@@ -1,0 +1,9 @@
+---
+const { url, name } = Astro.props;
+---
+
+<span class="badge rounded-pill text-bg-dark fs-6" style="margin-right: 5px;">
+	<a href={`${url}`} class="link-light">
+		{name}
+	</a>
+</span>

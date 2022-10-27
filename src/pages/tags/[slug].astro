@@ -5,46 +5,39 @@ import BlogArticleCard from "../../components/ArticleCard.astro";
 import { generateCategoryData } from "../../utils/slugHelper.js";
 
 export async function getStaticPaths() {
-    const allPosts = await Astro.glob("../../pages/blog/*.md");
-    const sortedPosts = allPosts.sort(
-        (a, b) =>
-            new Date(b.frontmatter.date).valueOf() -
-            new Date(a.frontmatter.date).valueOf()
-    );
+	const allPosts = await Astro.glob("../../pages/blog/*.md");
+	const sortedPosts = allPosts.sort((a, b) => new Date(b.frontmatter.date).valueOf() - new Date(a.frontmatter.date).valueOf());
 
-    // Get all unique tags
-    const allCategoriesUnique = new Set();
-    sortedPosts.forEach((post) => {
-        post.frontmatter.tags &&
-            post.frontmatter.tags.map((tags) => {
-                allCategoriesUnique.add(tags);
-            });
-    });
-    const allCategoriesData = generateCategoryData(allCategoriesUnique);
+	// Get all unique tags
+	const allCategoriesUnique = new Set();
+	sortedPosts.forEach((post) => {
+		post.frontmatter.tags &&
+			post.frontmatter.tags.map((tags) => {
+				allCategoriesUnique.add(tags);
+			});
+	});
+	const allCategoriesData = generateCategoryData(allCategoriesUnique);
 
-    // map through the tags array
-    return allCategoriesData.map((tags) => {
-        // filter the posts that match the given category
-        const posts = sortedPosts.filter((post) =>
-            post.frontmatter.tags.includes(tags.name)
-        );
-        return {
-            params: { slug: tags.slug },
-            props: {
-                tags: tags.name,
-                posts: posts,
-            },
-        };
-    });
+	// map through the tags array
+	return allCategoriesData.map((tags) => {
+		// filter the posts that match the given category
+		const posts = sortedPosts.filter((post) => post.frontmatter.tags.includes(tags.name));
+		return {
+			params: { slug: tags.slug },
+			props: {
+				tags: tags.name,
+				posts: posts,
+			},
+		};
+	});
 }
 const { tags, posts } = Astro.props;
 const title = `Blog Posts Tagged with [${tags}]`;
 ---
 
 <BaseLayout title={title}>
-    <main>
-        <h1>{title}</h1>
-        
-        {posts.map((post) => <BlogArticleCard post={post} />)}
-    </main>
+	<main>
+		<h1>{title}</h1>
+		{posts.map((post) => <BlogArticleCard post={post} />)}
+	</main>
 </BaseLayout>

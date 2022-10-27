@@ -6,26 +6,13 @@ const direction = page.url.next ? "flex-end" : "flex-start";
 ---
 
 <div class="pagination">
-    {
-        page.url.prev && (
-            <SpecialButton
-                class="previous"
-                name="Previous"
-                invertarrow="true"
-                url={page.url.prev}
-            />
-        )
-    }
-    {
-        page.url.next && (
-            <SpecialButton class="next" name="Next" url={page.url.next} />
-        )
-    }
+	{page.url.prev && <SpecialButton class="previous" name="Previous" invertarrow="true" url={page.url.prev} />}
+	{page.url.next && <SpecialButton class="next" name="Next" url={page.url.next} />}
 </div>
 
 <style define:vars={{ direction }}>
-    .pagination {
-        display: flex;
-        justify-content: var(--direction);
-    }
+	.pagination {
+		display: flex;
+		justify-content: var(--direction);
+	}
 </style>

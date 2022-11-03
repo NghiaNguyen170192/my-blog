@@ -9,7 +9,10 @@ export async function getStaticPaths({ paginate }) {
 	const pagesize = 10;
 	// search the current and all subdirectory for markdown files
 	const allPosts = await Astro.glob("../../pages/blog/*.md");
-	const sortedPosts = allPosts.sort((a, b) => new Date(b.frontmatter.date).valueOf() - new Date(a.frontmatter.date).valueOf()).filter((post) => post.frontmatter.draft == undefined);
+	const sortedPosts = allPosts
+		.filter((post) => post.frontmatter.draft == undefined)
+		.sort((a, b) => new Date(b.frontmatter.date).valueOf() - new Date(a.frontmatter.date).valueOf())
+		.reverse();
 
 	// Return a paginated collection of paths for all posts
 	return paginate(sortedPosts, { pageSize: pagesize });

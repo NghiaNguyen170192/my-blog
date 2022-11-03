@@ -3,8 +3,8 @@ layout: ../../layouts/BlogPostLayout.astro
 title: "Markdown syntax cheatsheet"
 description: "Markdown syntax cheatsheet"
 author: "Nghia Nguyen"
-date: "29th Aug 2022"
-pubDate: "29th Aug 2022"
+date: "29 Aug 2022"
+pubDate: "29 Aug2022"
 tags: ["markdown", "md", "cheatsheet"]
 categories: ["cheatsheet"]
 ---

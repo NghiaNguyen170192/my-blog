@@ -3,8 +3,8 @@ layout: ../../layouts/BlogPostLayout.astro
 title: "Basic .NET Core API Authentication"
 description: "How to setup Authentication for .NET Core API project"
 author: "Nghia Nguyen"
-date: "13th Oct 2022"
-pubDate: "13th Oct 2022"
+date: "13 Oct 2022"
+pubDate: "13 Oct 2022"
 tags: ["netcore", "api", "authentication", "jwt"]
 categories: ["development"]
 ---

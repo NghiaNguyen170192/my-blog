@@ -88,12 +88,7 @@ But let's throw in a <b>tag</b>.
 Here's our logo (hover to see the title text):
 
 Inline-style: 
-![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 1")
-
-Reference-style: 
-![alt text][logo]
-
-[logo]: https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 2"
+<img class="img-fluid"  src="https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png"  alt="ogo Title Text 1"/>
 
 
 Here is a simple footnote[^1].

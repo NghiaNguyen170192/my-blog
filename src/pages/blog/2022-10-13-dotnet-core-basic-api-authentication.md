@@ -11,7 +11,7 @@ categories: ["development"]
 
 This is a tutorial to setup `JWT` authentication for netcore API.
 
-In *Startup.cs* file, to enable JWT authentication from any identity provider, you add the following code.
+In *Startup.cs* file, to enable `JWT` authentication from any identity provider, you add the following code.
 
 ```csharp
 

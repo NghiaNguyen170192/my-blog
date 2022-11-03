@@ -3,8 +3,8 @@ layout: ../../layouts/BlogPostLayout.astro
 title: "Astro Production Deployment"
 description: "How to deploy Astro to Production"
 author: "Nghia Nguyen"
-date: "09th Oct 2022"
-pubDate: "09th Oct 2022"
+date: "09 Oct 2022"
+pubDate: "09 Oct 2022"
 tags: ["azure", "astro", "pwa", "deployment", "netlify"]
 categories: ["deployment"]
 ---
@@ -49,7 +49,8 @@ Here are steps to deploy to Azure.
 8. Link your *Organization* , *Repository* and *Branch*
 9. Then click *Create*
 
-![Deploy to Azure image](/image/deploy-to-azure.png)
+<img class="img-fluid"  src="/image/deploy-to-azure.png"  alt="Deploy to Azure image"/>
+<!-- ![Deploy to Azure image](/image/deploy-to-azure.png) -->
 
 It will create a deployment *.yml* file under *.github/workflows*
 

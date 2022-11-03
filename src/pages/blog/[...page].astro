@@ -11,8 +11,7 @@ export async function getStaticPaths({ paginate }) {
 	const allPosts = await Astro.glob("../../pages/blog/*.md");
 	const sortedPosts = allPosts
 		.filter((post) => post.frontmatter.draft == undefined)
-		.sort((a, b) => new Date(b.frontmatter.date).valueOf() - new Date(a.frontmatter.date).valueOf())
-		.reverse();
+		.sort((a, b) => new Date(b.frontmatter.date).valueOf() - new Date(a.frontmatter.date).valueOf());
 
 	// Return a paginated collection of paths for all posts
 	return paginate(sortedPosts, { pageSize: pagesize });

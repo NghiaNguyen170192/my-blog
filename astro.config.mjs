@@ -5,7 +5,7 @@ import image from '@astrojs/image';
 
 export default defineConfig({
 	site: "http://localhost:3000",
-	output: "server",
+	output: "static",
 	integrations: [
 		mdx(),
 		image()

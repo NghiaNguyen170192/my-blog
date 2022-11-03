@@ -3,6 +3,7 @@
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import BlogArticleCard from "../../components/ArticleCard.astro";
 import { generateCategoryData } from "../../utils/slugHelper.js";
+import Badge from "@components/Badge.astro";
 
 export async function getStaticPaths() {
 	const allPosts = await Astro.glob("../../pages/blog/*.md");
@@ -33,10 +34,12 @@ export async function getStaticPaths() {
 	});
 }
 const { category, posts } = Astro.props;
-const title = `Blog Posts Tagged with [${category}]`;
+const title = `Blog Posts categorized with `;
 ---
 
 <BaseLayout title={title}>
-	<h1>{title}</h1>
+	<h1>{title}
+		<Badge url={`/categor/${category}`} name={category} />
+	</h1>
 	{posts.map((post) => <BlogArticleCard post={post} />)}
 </BaseLayout>

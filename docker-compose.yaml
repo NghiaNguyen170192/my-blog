@@ -8,7 +8,7 @@ services:
       dockerfile: ./Dockerfile
     hostname: web1
     ports:
-      - '81:3000'
+      - '3001:3000'
   web2:
     restart: on-failure
     build: 
@@ -16,7 +16,7 @@ services:
       dockerfile: ./Dockerfile
     hostname: web2
     ports:
-      - '82:3000'
+      - '3002:3000'
   nginx:
     build: ./nginx
     ports:

@@ -1,0 +1,30 @@
+---
+// Component imports and setup JavaScript go here!
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Paginator from "../../components/Paginator.astro";
+import ArticleCard from "../../components/ArticleCard.astro";
+
+export async function getStaticPaths({ paginate }) {
+	// Load your data with fetch(), Astro.glob(), etc.
+	const pagesize = 10;
+	// search the current and all subdirectory for markdown files
+	const allPosts = await Astro.glob("../../pages/blog/*.md");
+	const sortedPosts = allPosts
+		.filter((post) => post.frontmatter.draft == undefined)
+		.sort((a, b) => new Date(b.frontmatter.date).valueOf() - new Date(a.frontmatter.date).valueOf());
+
+	// Return a paginated collection of paths for all posts
+	return paginate(sortedPosts, { pageSize: pagesize });
+}
+
+const title = "Blog Article List";
+const { page } = Astro.props;
+---
+
+<BaseLayout title={title}>
+	<h1>{title}</h1>
+	<br />
+	{page.data.map((post) => <ArticleCard post={post} /> <br />)}
+
+	<Paginator page={page} />
+</BaseLayout>

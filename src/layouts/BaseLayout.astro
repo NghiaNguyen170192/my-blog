@@ -1,0 +1,24 @@
+---
+import BaseHead from "../components/BaseHead.astro";
+import Header from "@components/Header.astro";
+import SideBar from "@components/SideBar.astro";
+
+const { title } = Astro.props || Astro.props.content.title;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+	<BaseHead title={title} />
+
+	<body>
+		<Header />
+		<div class="container-fluid">
+			<div class="row">
+				<SideBar />
+				<main class="ms-sm-auto col-md-10 col-lg-10 col-xl-10 col-xxl-11 px-md-4 fs-5">
+					<slot />
+				</main>
+			</div>
+		</div>
+	</body>
+</html>

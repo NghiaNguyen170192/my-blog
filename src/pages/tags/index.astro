@@ -1,0 +1,30 @@
+---
+// Component imports and setup JavaScript go here!
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { generateCategoryData } from "../../utils/slugHelper.js";
+import Badge from "@components/Badge.astro";
+
+const allPosts = await Astro.glob("../../pages/blog/*.md");
+const allCategoriesUnique = new Set();
+allPosts.forEach((post) => {
+	post.frontmatter.tags &&
+		post.frontmatter.tags.map((tags) => {
+			allCategoriesUnique.add(tags);
+		});
+});
+const allCategoriesData = generateCategoryData(allCategoriesUnique);
+const title = "Tags";
+---
+
+<BaseLayout title={title}>
+	<h1>{title}</h1>
+	<ul>
+		{
+			allCategoriesData.map((tags) => (
+				<li>
+					<Badge url={`/tags/${tags.slug}`} name={tags.name} />
+				</li>
+			))
+		}
+	</ul>
+</BaseLayout>

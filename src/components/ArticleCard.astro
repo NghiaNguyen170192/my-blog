@@ -1,0 +1,27 @@
+---
+import Badge from "./Badge.astro";
+const { post } = Astro.props;
+const tags_link = post.frontmatter.tags.map((tag) => {
+	var json = {};
+	json["tag"] = tag;
+	json["url"] = `/tags/${tag}`;
+	return json;
+});
+
+---
+<div class="card border-dark mb-3">
+	<div class="card-header form-inline">
+		<h5 class="card-title inline">
+			<a href={post.url}>{post.frontmatter.title}</a>
+		</h5>
+		<h6 class="card-title inline">
+			{post.frontmatter.date}
+		</h6>
+	</div>
+	<div class="card-body text-dark">
+		<p class="card-text">{post.frontmatter.description}</p>
+	</div>
+	<div class="card-footer bg-transparent border-dark">
+		{tags_link.map((tag) => <Badge url={tag["url"]} name={tag["tag"]} />)}
+	</div>
+</div>

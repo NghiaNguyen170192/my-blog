@@ -1,0 +1,35 @@
+---
+import BaseLayout from "./BaseLayout.astro";
+import Badge from "@components/Badge.astro";
+
+const { content } = Astro.props;
+const formatted_date = new Date(content.date).toDateString();
+const tags_link = content.tags.map((tag) => {
+	var json = {};
+	json["tag"] = tag;
+	json["url"] = `/tags/${tag}`;
+	return json;
+});
+---
+
+<BaseLayout title={content.title}>
+	<h1>{content.title}</h1>
+	<div class="metadata-flexbox">
+		<div><i class="fa-solid fa-calendar"></i> {formatted_date}</div>
+	</div>
+	<br />
+	<div class="tag">
+		{tags_link.map((tag) => <Badge url={tag["url"]} name={tag["tag"]} />)}
+	</div>
+	<br />
+	<slot />
+</BaseLayout>
+<script>
+	console.log("here      " + content.passwordRequired);
+
+	if (content.passwordRequired) {
+		var response = prompt("What is your name?");
+
+		alert("Hello, " + response);
+	}
+</script>
